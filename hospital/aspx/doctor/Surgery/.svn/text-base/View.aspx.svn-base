@@ -1,0 +1,64 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="View.aspx.cs" Inherits="aspx_doctor_Surgery_View" MasterPageFile="~/master/subMain.master"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="../../../css/epoch_styles.css" />
+	<script type="text/javascript" src= "../../../script/epoch_classes.js"></script>
+	<style type="text/css">
+		.regText 
+		{
+			background-color: #cccccc ; 
+			color:  #FFFFFF; 
+			font-family: Arial, Helvetica, sans-serif ; 
+			font-size: 11px ; 
+			border:none ;  
+			padding: 7px ;
+		}
+	</style>
+	
+	<style type="text/css">
+		.inputStyle 
+		{
+			background-color: #cccccc; color: #FFFFFF; 
+			font-family: Arial, Helvetica, sans-serif ; font-size: 11px ; border:black ; padding: 7px ; overflow: hidden ;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			var popupcalendar = new Epoch('cal','popup',document.getElementById('ctl00_cnt_DOS'),false);
+		}
+
+		function checkPost(obj) {
+			if (obj.value.length > 4) {
+				obj.value = obj.value.substring(0,4);
+			}
+			obj.value = obj.value.replace(/[^0-9]/g, "");
+		}
+	</script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cnt" runat="server">
+New Surgery For  &nbsp;<asp:Label ID="userNameLabel" runat="server" Text="Label"></asp:Label>
+		<div id="doctor's surgery form">
+		<asp:TextBox ID="UserID" runat="server" style="display:none;"></asp:TextBox>
+		<asp:TextBox ID="SurgeryID" runat="server" style="display:none;"></asp:TextBox>
+		<br />Date of Surgery<br />
+		<asp:TextBox ID="DOS" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" ></asp:TextBox><br />
+             <br />Room of Surgery<br />
+		<asp:TextBox ID="ROS" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')"  Width="113px"></asp:TextBox><br />
+		    <br />Brief description of the surgery<br />
+		<asp:TextBox ID="surgery_description" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')"  Height="212px" 
+                Width="382px" TextMode="MultiLine"></asp:TextBox><br />
+            <br />Possiable side effects:<br />
+		<asp:TextBox ID="surgeryse" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" ></asp:TextBox>
+            <br />
+            <br />
+            Memo<br />
+		    		<asp:TextBox ID="Memo" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')"  Height="212px" 
+                Width="382px" TextMode="MultiLine"></asp:TextBox>
+            <br />
+            <br />
+		    
+
+
+	<asp:Button ID="Button1" runat="server" Text="Update" onclick="Update"/><asp:Button ID="Button2" runat="server" Text="Delete" onclick="Delete"/><input type="button" value="close" onclick="history.go(-1);" />
+	</div>
+
+</asp:Content>

@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using BusinessTier;
+using System.Collections.Generic;
+using DataTier;
+
+public partial class aspx_doctor_Surgery_create : BasePage
+{
+    protected override void Fire(object sender, EventArgs e)
+    {
+        if (!UserInfo.isDoctor(Session))
+        {
+            alertAndGoback("you are not a doctor. Please login");
+            return;
+        }
+        UserID.Text = Param.getString("pId");
+        Data result = new Data();
+        DBC dbc = new DBC();
+
+        Data data = new Data();
+        /*dbc.open();
+        data.add("pID", Param.get("pId"));
+        result = dbc.select("SELECT * FROM Users WHERE UserID = @pId", data);
+        dbc.close();*/
+        SurgeryBiz biz = new SurgeryBiz();
+        biz.view(data);
+        userNameLabel.Text = result.getString("UserSurName") + "," + result.getString("UserFirstName") + ",ID:" + result.getString("UserID");
+    }
+
+    protected void Submit(object sender, EventArgs e)
+    {
+        DBC dbc = new DBC();
+        Data data = Param;
+        data.add("DoctorID", UserInfo.getId(Session));
+        SurgeryBiz biz = new SurgeryBiz();
+        result = biz.create(data);
+        /*
+        dbc.open();
+        Object SurgeryID = dbc.select("SELECT COUNT(SurgeryID) + 1 AS MAX_ID FROM DoctorsSurgery", Param).get("MAX_ID");
+        data.add("SurgeryID", SurgeryID);
+        dbc.update(@"INSERT INTO DoctorsSurgery
+                    (DoctorID, SurgeryID, UserID, UserDOS, UserROS, UserSD, UserSSE, Memo, state)
+                    VALUES  (@DoctorID, @SurgeryID, @UserID, @DOS, @ROS, @surgery_description, @surgeryse, @Memo, 0)", data);
+        data.add("historyId", dbc.select(@"SELECT MAX(historyId) +1 AS MAX_ID FROM history", data).get("MAX_ID"));
+        dbc.update(@"INSERT INTO history
+                (patientId, historyId, staffId, memo, type, cntId, date)
+                 VALUES   (@UserID, @historyId, @DoctorID, @Memo, 2, @SurgeryID, getDate())", data);
+        dbc.close();
+         */
+        go("~/aspx/doctor/history/list.aspx?pId=" + Param.getString("UserID"));
+    }
+
+}

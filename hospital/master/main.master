@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="main.master.cs" Inherits="master_main" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+	<title>TCH</title>
+	<link type="text/css" href="~/css/style.css" rel="Stylesheet" runat="server"/>
+	<script type="text/javascript" src="/hospital/script/jquery.js"></script>
+	<script type="text/javascript" src="/hospital/script/scrolltopcontrol.js"></script>
+	<!-- start head holder -->
+	<asp:ContentPlaceHolder id="head" runat="server">
+	</asp:ContentPlaceHolder>
+	<!-- end head holder -->
+	
+</head>
+<body style=">
+<form id="mainForm" runat="server">
+
+	<div id="wrapper">
+	<table cellpadding="0" cellspacing="0" style="width:920px;">
+		<tr>
+			<td colspan="2" style="width:920px;">
+				<div id="header">
+				<br />
+				<a href="/hospital/default.aspx"><asp:Image ID="Home" ImageUrl="~/images/logo.png" runat="server" alt="" width="76" height="69" /></a>
+   				</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:220px;vertical-align:top">
+				<div style="border-top:2px solid #222222;" >
+					<br />
+					<div class="break"></div>
+					<div class="navigation"><a title="Home" href ="/hospital/aspx/default.aspx">Home</a></div>
+					<div class="navigation"><a title="About" href ="/hospital/aspx/About.aspx">About</a></div>
+					<div class="navigation"><a title="Contact" href ="/hospital/aspx/Contact.aspx">Contact</a></div>
+					<div class="navigation"><a title="Login" href ="/hospital/aspx/location.aspx">Location</a></div>
+					<div class="navigation"><a title="Login" href ="/hospital/aspx/Login.aspx">Login</a></div>
+				</div>
+			</td>
+			<td style="width:700px;">
+				<div class="generic sevenhun end" style="width:700px">
+					<div id="content" style="width:700px;">
+						<!-- start content holder -->
+						<asp:ContentPlaceHolder id="cnt" runat="server">
+						</asp:ContentPlaceHolder>
+						<!-- end content holder -->
+					</div>
+			
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div class="generic nineforty" style="width:920px;">
+					<p id="footer-nav">© 2010 Townsville Children's Hospital</p>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</form>
+</body>
+</html>

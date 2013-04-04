@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<site>
+	<paging rowSize="20" pageSize="10"/>
+	<database dataSource="." initialCatalog="hospital" security="true">
+	  <path>C:\Users\ZY\Desktop\INB201\g44\hospital\App_Data\HOSPITAL.mdf</path>
+	</database>
+	<group size="200"/>
+	<security password="Tedspassword"/>
+
+	<menu>
+		<item categoryNum="0">notice</item>
+		<item categoryNum="1">BOARD</item>
+		<item categoryNum="2">BUG</item>
+	</menu>
+</site>

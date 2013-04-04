@@ -1,0 +1,740 @@
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th, {  
+	margin:0; 
+	padding:0; 
+} 
+table { 
+	border-collapse:collapse; 
+	border-spacing:0; 
+} 
+
+td{
+	
+padding: 5px ;	
+	
+	
+}
+
+td a:hover{
+	
+color: #000 ;	
+	
+	
+	
+}
+
+
+fieldset,img {  
+	border:0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+	font-style:normal; 
+	font-weight:normal; 
+} 
+
+caption,th { 
+	text-align:left; 
+} 
+
+q:before,q:after { 
+	content:''; 
+} 
+abbr,acronym {
+	border:0; 
+}
+/*---------- END RESET ----------*/
+
+
+/*-------------------------------------------+
+|                                            |
+|            MAIN STRUCTURE STYLES           |
+|                                            |
++-------------------------------------------*/
+html{
+	font-size:100%;
+	min-height:101%;
+}
+body{
+	font-size:62.5%;
+	font-family:Georgia, "Times New Roman", serif;
+	color:#666;
+	background: #ffffff ;
+	
+	padding:0 1em;
+}
+#wrapper{
+	width:94em;
+	margin:0 auto;
+}
+#header{
+	position: relative ;
+	float: right ;
+}
+
+.break{
+	
+width: 100% ;
+border-bottom: 1px  solid #CCC ;
+	padding: 5px 0px 0px 0px ;
+	
+	
+}
+
+.break2{
+	
+width: 100% ;
+border-bottom: 1px  solid #CCC ;
+	padding: 9px 0px 0px 0px ;
+	
+	
+}
+
+#content{
+
+position: relative  ;
+margin: 0 ;
+
+width: 1000px ;
+border-bottom: 1px solid #cccccc ;
+line-height: 150% ;
+
+}
+#loginlogo{
+	
+	position: relative ;
+
+
+
+margin-left: auto ;
+margin-right: auto ;
+	
+
+width: 76px ;
+height: 69px ;
+	
+	
+}
+
+#shadow-container {
+	position: relative ;
+
+height: 180px ;
+padding: 10px ;
+
+margin-left: auto ;
+margin-right: auto ;
+	top: 150px ;
+	background: #fff ;
+	width: 240px ;
+}
+ 
+#shadow-container .shadow2,
+#shadow-container .shadow3,
+#shadow-container .container {
+	position: relative;
+	left: -1px;
+	top: -1px;
+}
+ 
+	#shadow-container .shadow1 {
+		background: #F1F0F1;
+	}
+ 
+	#shadow-container .shadow2 {
+		background: #DBDADB;
+	}
+ 
+	#shadow-container .shadow3 {
+		background: #B8B6B8;
+	}
+ 
+	#shadow-container .container {
+		background: #ffffff;
+		border: 1px solid #DBDADB;
+		padding: 10px;
+	}
+
+
+
+.loggingin{
+	
+clear:both;
+	padding:5px;
+	right: 20px ;
+	cursor:pointer;
+
+
+
+	
+	
+}
+
+.loggingin a:hover{
+	
+clear:both;
+	
+	
+	cursor:pointer;
+color: #000 ;
+	
+	
+}
+
+/*NAVIGATION
+-------------------------------------------------------- */
+
+.navigation {
+	
+position:relative ;
+image:none;
+position:outside;
+list-style-type:none;
+margin:0;
+padding:0;
+font-family: Arial, Helvetica, sans-serif ;
+border-bottom: 1px solid #CCC ;
+text-decoration: none ;
+color: #414141 ;
+height:20px ;
+padding:5px ;
+
+}
+
+
+.navigation a:hover {
+
+
+text-decoration: underline ;
+font-family: Arial, Helvetica, sans-serif ;
+
+
+
+}
+
+.submit{
+	
+position:relative ;
+image:none;
+position:outside;
+list-style-type:none;
+margin:0;
+padding:0;
+font-family: Arial, Helvetica, sans-serif ;
+
+text-decoration: none ;
+width: 220px ;
+}
+
+
+.submit a:hover {
+
+
+color: #000000;
+font-family: Arial, Helvetica, sans-serif ;
+
+width: 220px ;
+
+}
+
+.confirm{
+	
+position:relative ;
+image:none;
+position:outside;
+list-style-type:none;
+margin:0;
+padding:0;
+font-family: Arial, Helvetica, sans-serif ;
+
+text-decoration: none ;
+width: 220px ;
+left: 137px ;
+
+}
+
+
+.confirm a:hover {
+
+
+color: #000000;
+font-family: Arial, Helvetica, sans-serif ;
+
+width: 220px ;
+
+
+}
+
+.contact{
+	
+	
+	
+	
+	
+	
+}
+
+
+#registration{
+	
+	
+position: relative ;
+
+	
+	
+}
+
+
+
+
+#nav{
+	font-size:2em;
+}
+#nav a{
+	font-variant:small-caps;
+	color:#000;
+}
+#nav a:hover{
+	text-decoration:none;
+}
+#nav span{
+	float:right;
+	margin-top:-1.2em;
+}
+/*FOOTER NAVIGATION
+-------------------------------------------------------- */
+#footer-nav{
+	
+	position: relative ;
+	float: right ;
+}
+#footer-nav a{
+	color:#000;
+	font-variant:small-caps;
+}
+/*GRIDS
+-------------------------------------------------------- */
+/* Set styles common among all grids - all grid divs must be assigned this class */
+.generic{
+	border-top: 2px solid #222222; /* The border at the top of each grid */
+	float:left;
+	padding-top:1em;
+	margin-bottom:2em;
+}
+/* Sets styles for any 'start' grids - this class MUST be given to a grid that is the first in a horizontal series */
+.clear{
+	clear:both;
+}
+/* Sets styles for any 'end' grids - this class MUST be given to a grid that is the last in a horizontal series */
+.end{
+	margin-left:0 !important;
+	margin-right:0 !important;
+}
+/* 220px */
+.twotwenty{
+	width:22em;
+	margin-right:2em;
+}
+/* 280px */
+.twoeighty{
+	width:28em;
+	margin-right:2em;
+}
+/* 340px */
+.threeforty{
+	width:94em;
+	margin-right:2em;
+}
+/* 400px */
+.fourhun{
+	width:40em;
+	margin-right:2em;
+}
+/* 460px */
+.foursixty{
+	width:46em;
+	margin-right:2em;
+}
+/* 520px */
+.fivetwenty{
+	width:52em;
+	margin-right:2em;
+}
+/* 580px */
+.fiveeighty{
+	width:58em;
+	margin-right:2em;
+}
+/* 640px */
+.sixforty{
+	width:64em;
+	margin-right:2em;
+}
+/* 700px */
+.sevenhun{
+	width:70em;
+	margin-right:2em;
+}
+/* 760px */
+.sevensixty{
+	width:76em;
+	margin-right:2em;
+}
+/* 820px */
+.eighttwenty{
+	width:82em;
+	margin-right:2em;
+}
+/* 880px */
+.eighteighty{
+	width:88em;
+	margin-right:2em;
+}
+/* 940px */
+.nineforty{
+	width:94em;
+}
+/*-------------------------------------------+
+|                                            |
+|                FONT STYLES                 |
+|                                            |
++-------------------------------------------*/
+/*PARAGRAPHS
+-------------------------------------------------------- */
+.generic p{
+	font-size:10px ;
+	line-height:1.5em;
+	margin-bottom:1.5em;
+	color: #222222 ;
+}
+/* Styles an introductory paragraph, similar to newspapers. Assign this class to the first paragraph in an article */
+p.intro:first-line{
+	font-variant:small-caps;
+}
+/* Styles a drop cap on each paragraph with this class */
+p.drop:first-letter{
+	float:left;
+	font-size:3em;
+	margin-top:-0.05em;
+	margin-right:0.1em;
+	margin-bottom:-0.5em;
+}
+/*HEADINGS
+-------------------------------------------------------- */
+h1{
+	color:#000;
+	font-size:3em;
+	margin-bottom:0.6em;
+	font-style:italic;
+	line-height:1.2em;
+}
+h2{
+	color:#222222;
+	font-family: Arial, Helvetica, sans-serif ;
+	font-size: 20px ;
+	font-weight:bold ;
+	margin-bottom:0.9em;
+	line-height:2px ;
+}
+h3{
+	position: relative ;
+	color:#000;
+	font-size:1.5em;
+	
+	line-height:1.2em;
+	font-variant:small-caps;
+
+}
+h4{
+	color:#000;
+	font-size:1.2em;
+	margin-bottom:1.5em;
+	line-height:1.5em;
+	font-variant:small-caps;
+}
+h5{
+	color:#000;
+	font-size:1em;
+	margin-bottom:1.8em;
+	line-height:1.8em;
+	font-variant:small-caps;
+}
+h6{
+	color:#000;
+	font-size:1em;
+	margin-bottom:1.8em;
+	line-height:1.8em;
+}
+/*LINKS
+-------------------------------------------------------- */
+
+a{
+	
+color: #222222 ;
+text-decoration: none ;
+	font-size: 12px ;
+	
+}
+
+
+.contact{
+	
+font-size: 10px ;
+font-family: Arial, Helvetica, sans-serif ;
+	padding: 5px ;
+	border-bottom: 1px solid #CCC ;
+}
+
+
+
+
+.contacts{
+	
+background: #f2f2f2 ;	
+	
+	border: 1px solid #CCC ;
+	
+}
+
+/*ALL THE TRIMMINGS
+-------------------------------------------------------- */
+blockquote p{
+	font-size:1.2em!important;
+	line-height:1.5em!important;
+	margin-bottom:1.5em!important;
+	font-style:italic;
+	font-weight:bold;
+}
+blockquote p cite{
+	font-style:normal;
+}
+.generic strong{
+	font-variant:small-caps;
+}
+.generic em{
+	font-style:italic;
+	font-weight:inherit;
+}
+.amp{ /* Give those ampersands a right sexy look */
+	font-family:Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
+	font-style:italic;
+	font-weight:normal;
+	line-height:inherit;
+}
+abbr{
+	border-bottom:1px dotted #666;
+	border-color:inherit;
+	cursor:help;
+}
+.clear{
+	clear:both;
+}
+.right-float{ /* Float any item to the right */
+	float:right;
+	margin-left:2em;
+	margin-right:0;
+}
+.left-float{ /* Float any item to the left */
+	float:left;
+	margin-right:2em;
+	margin-left:0;
+}
+.code{ /* Styling for and code type items */
+	font-family:Courier, "Courier New", monospace;
+	background:#ddd;
+	font-size:1em;
+}
+/*-------------------------------------------+
+|                                            |
+|               IMAGE STYLES                 |
+|                                            |
++-------------------------------------------*/
+img{
+	font-size:1em;
+}
+img.left-img{ /* Float any image to the LEFT and give it some margin */
+	font-size:1em;
+	float:left;
+	padding:4px;
+	border:1px solid #ccc;
+	margin-bottom:1.8em;
+	margin-right:2em;
+	margin-top:0.3em;
+}
+img.right-img{ /* Float any image to the RIGHT and give it some margin */
+	font-size:1em;
+	float:right;
+	padding:4px;
+	border:1px solid #ccc;
+	margin-bottom:1.8em;
+	margin-left:2em;
+	margin-top:0.3em;
+}
+/*CONTACT FORM STYLES
+-------------------------------------------------------- */
+#contact-form{
+}
+#contact-form label{
+	width:10em;
+	float:left;
+	margin-top:0.6em;
+}
+#name, #form-email, #url, #location{
+	width:42.7em;
+	height:20px;
+	padding:3px;
+	padding-top:5px;
+	border:2px solid #666;
+	margin-bottom:18px;
+	background:#fff !important;
+}
+#comments{
+	width:43.8em;
+	height:10em;
+	padding:3px;
+	border:2px solid #666;
+	margin-bottom:18px;
+	overflow:auto;
+	background:#fff !important;
+}
+#name:active, #form-email:active, #url:active, #location:active, #comments:active, #submit:active, #name:focus, #form-email:focus, #url:focus, #location:focus, #comments:focus, #submit:focus{
+	border:2px solid #000;
+}
+#submit{
+	clear:both;
+	padding:5px;
+	border:2px solid #666;
+	background:#fff !important;
+	cursor:pointer;
+	margin-left:9em;
+}
+#reset{
+	clear:both;
+	padding:3px;
+	border:none;
+	background:#f00 !important;
+	cursor:pointer;
+	float:right;
+	color:#fff;
+	margin-top:-28px;
+}
+/*-------------------------------------------+
+|                                            |
+|                LIST STYLES                 |
+|                                            |
++-------------------------------------------*/
+
+ul li{
+	
+	
+	font-size:1.2em;
+	line-height:1.5em;
+}
+ul li.caption{ /* Apply this class to the first list item in a list to give it a caption */
+	font-variant:small-caps;
+	list-style:none;
+	color:#000;
+}
+li > ul, li > ol{
+	margin-bottom:0;
+	margin-left:5em;
+}
+li > ul li, li > ol li{
+	font-size:1em;
+}
+ol{
+	margin-bottom:1.8em;
+	list-style:decimal inside;
+}
+ol li{
+	font-size:1.2em;
+	line-height:1.5em;
+}
+
+
+
+
+/*-------------------------------------------+
+|                                            |
+|               MISC. STYLES                 |
+|                                            |
++-------------------------------------------*/
+
+
+/*Search*/
+
+fieldset.search {
+	position: relative ;
+border: none ;
+	width: 220px  ;
+	margin: 0 ;
+	background: #ffffff;
+top: 0px ;
+
+}
+.search input, .search button {
+	border: none;
+	float: left;
+}
+.search input.box {
+	color: #414141;
+	font-size: 1em;
+	width: 135px;
+	height: 20px;
+	padding: 8px 5px 0;
+	background: #ffffff;
+	margin-right: 0px;
+	font-family:Arial, Helvetica, sans-serif ;
+	border: thin solid #cccccc ;
+}
+.search input.box:focus {
+	background: #DBDADB ;
+	outline: none;
+}
+.search button.btn {
+	width: 60px;
+	height: 30px;
+	cursor: pointer;
+
+	background: #ffffff ;
+	font-size:10px ;
+	font-family:Arial, Helvetica, sans-serif ;
+	border-top: thin solid #cccccc ;
+	border-bottom: thin solid #cccccc ;
+	border-right: thin solid #cccccc ;
+	color: #CCC ;
+
+}
+.search button.btn:hover {
+
+	background: #414141 ;
+	color: #FFFFFF ;
+}
+
+/*
+
+	"I could eat a knob at night"
+		-	Karl Pilkington
+
+*/
+
+#payment-form{
+	
+padding: 5px ;	
+	
+	
+}
+
+
+.fillout {
+   color: black;
+   border-width: 0;
+   border-bottom: 1px solid #000;
+   width: 300pt;
+
+  .postselect {
+   display: block;
+   width: 300pt;
+   height: 1em;
+   border: none;
+   border-bottom: 1px solid #000;
+  }

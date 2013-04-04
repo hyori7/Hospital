@@ -1,0 +1,58 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="list.aspx.cs" Inherits="aspx_doctor_patients_list" MasterPageFile="~/master/subMain.master" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+	<script type="text/javascript">
+	    function view(pId) 
+	    {
+	            document.location.href = "/hospital/aspx/doctor/history/list.aspx?pId=" + pId;
+        }
+	    
+	</script>
+	
+	<style type="text/css">
+		.inputStyle 
+		{
+			background-color: #cccccc; color: #FFFFFF; 
+			font-family: Arial, Helvetica, sans-serif ; font-size: 11px ; border:black ; padding: 7px ; overflow: hidden ;
+		}
+	    #searchField
+        {
+            height: 16px;
+            width: 174px;
+        }
+	</style>
+	
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="cnt" runat="server">
+	<select name="searchField" id="searchField">
+		<option value="" <%if ("userId".Equals(Param.getString(""))) Response.Write("selected='selected'");%>>USER ID</option>
+		<option value="SearchField" <%if ("firstName".Equals(Param.getString("SearchField"))) Response.Write("selected='selected'");%>>First Name</option>
+		<option value="SearchValue" <%if ("surName".Equals(Param.getString("SearchValue"))) Response.Write("selected='selected'");%>>Surname</option>
+	</select> 
+	<input id="searchValue" name="searchValue" value="<%=Param.get("searchValue")%>" /> 
+	<input type="button" value="SEARCH" onclick="search()" />
+	
+	<br />
+        Patient List</div>
+    <asp:GridView ID="Patientlist" runat="server" CellPadding="4" ForeColor="#333333" 
+        GridLines="None"
+        Height="170px" Width="588px" AutoGenerateColumns="False">
+        <Columns>
+				<asp:BoundField HeaderText="PatientId" DataField="UserID" HtmlEncode="true"/>
+				<asp:TemplateField HeaderText="Patient's Name">
+					<ItemTemplate>
+						<%#"<a href=\"javascript:view('" + Eval("UserID") + "');\">" + Eval("UserFirstName") + ", " + Eval("UserSurName") + "</a>"%>
+					</ItemTemplate>
+				</asp:TemplateField>
+				<asp:BoundField HeaderText="Patient's Phone" DataField="PhoneNumber"/>
+	    </Columns>
+        <RowStyle BackColor="#EFF3FB" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <EditRowStyle BackColor="#2461BF" />
+        <AlternatingRowStyle BackColor="White" />
+    </asp:GridView>
+    <asp:TextBox ID="error" runat="server"></asp:TextBox>
+</asp:Content>

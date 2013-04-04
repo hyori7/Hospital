@@ -1,0 +1,90 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="user.master.cs" Inherits="master_main" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+	<title>GROUP 44</title>
+	<link id="Link1" type="text/css" href="~/css/style.css" rel="Stylesheet" runat="server"/>
+	<script type="text/javascript" src="../../script/jquery.js"></script>
+	<script type="text/javascript" src="../../script/scrolltopcontrol.js"></script>
+	<!-- start head holder -->
+	<asp:ContentPlaceHolder id="head" runat="server">
+	</asp:ContentPlaceHolder>
+	<!-- end head holder -->
+	<style type="text/css">
+		.loginName 
+		{
+			background-color: #FFFFFF ; 
+			color: #999; 
+			font-family: Arial, Helvetica, sans-serif ; 
+			font-size: 11px ; 
+			border:none ; 
+			padding: 7px ; 
+			overflow: hidden ;
+		}
+		.loginPwd 
+		{
+			background-color: #FFFFFF; 
+			color:  #999; 
+			font-family: Arial, Helvetica, sans-serif ; 
+			font-size: 11px ; 
+			border:none ;  
+			padding: 7px ;  
+			overflow: hidden ;
+		}
+	</style>
+	<script type="text/javascript">
+		function changeLoginBtn(id, type) {
+			if( type ) {
+				document.getElementById(id).src = document.getElementById(id).src.replace("out", "over");
+			} else {
+				document.getElementById(id).src = document.getElementById(id).src.replace("over", "out");
+			}
+		}
+	</script>
+</head>
+<body>
+<form id="mainForm" runat="server">
+	
+	<div id="page-wrap">
+		<!-- start logo -->
+		<div id="header">
+			<a title="Home" href "#"><img src="../../images/header.png" alt=""  border= "0"/></a>
+		</div>
+		<!-- end logo -->
+		<br /><br />
+		
+		<div class="break"></div>
+		<div id="navwrap1"></div>
+		<br />
+		
+		<div id="navwrap2">
+
+			<div id="home"><a title="Home" href ="/hospital/aspx/default.aspx">HOME</a></div>
+			<div id="about"><a title="About" href ="about.html">ABOUT</a></div>
+			<div id="services"><a title="Servcies" href ="services.html">SERVICES</a></div>
+			<div id="staff"><a title="Staff members" href ="staff.html">STAFF</a></div>
+			<div id="location"><a title="Location" href ="location.html">LOCATION</a></div>
+			<div id="contact"><a title="Contact" href ="contact.html">CONTACT</a></div>
+			<div id="feedback"><a title="Feedback" href ="feedback.html">FEEDBACK</a></div>
+			<div id="sitemap"><a title="Sitemap" href ="sitemap.html">SITEMAP</a></div>
+
+		</div>
+		<br />
+		
+		<div id="content">
+			<!-- start content holder -->
+			<asp:ContentPlaceHolder id="cnt" runat="server">
+			</asp:ContentPlaceHolder>
+			<!-- end content holder -->
+		</div>
+		<a href="#top">
+			<asp:Image ID="Image1" ImageUrl="~/images/pagetop.jpg" runat="server" />
+		</a>
+
+		<div id="footer"><br /><p>Townsville Children's Hospital</p>
+	</div>
+</form>
+</body>
+</html>

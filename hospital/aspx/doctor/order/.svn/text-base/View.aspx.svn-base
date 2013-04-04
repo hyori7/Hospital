@@ -1,0 +1,89 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="View.aspx.cs" Inherits="aspx_doctor_order_View" MasterPageFile="~/master/subMain.master"%>
+<asp:Content ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="../../../css/epoch_styles.css" />
+	<script type="text/javascript" src= "../../../script/epoch_classes.js"></script>
+	<style type="text/css">
+		.regText 
+		{
+			background-color: #cccccc ; 
+			color:  #FFFFFF; 
+			font-family: Arial, Helvetica, sans-serif ; 
+			font-size: 11px ; 
+			border:none ;  
+			padding: 7px ;
+		}
+	</style>
+	
+	<style type="text/css">
+		.inputStyle 
+		{
+			background-color: #cccccc; color: #FFFFFF; 
+			font-family: Arial, Helvetica, sans-serif ; font-size: 11px ; border:black ; padding: 7px ; overflow: hidden ;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			var popupcalendar = new Epoch('cal','popup',document.getElementById('ctl00_cnt_DOB'),false);
+		}
+
+		function checkPost(obj) {
+			if (obj.value.length > 4) {
+				obj.value = obj.value.substring(0,4);
+			}
+			obj.value = obj.value.replace(/[^0-9]/g, "");
+		}
+	</script>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="cnt" runat="server">
+        Order For  &nbsp;<asp:Label ID="userNameLabel" runat="server" Text="Label"></asp:Label>
+		<div id="doctor's order form">
+		<br />ORDER<br />
+            <asp:TextBox ID="UserID" runat="server" style="display:none;"></asp:TextBox>
+            <asp:TextBox ID="OrderID" runat="server" style="display:none;"></asp:TextBox>
+		<asp:TextBox ID="UserOD" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')"  Height="212px" 
+                Width="382px" TextMode="MultiLine"></asp:TextBox><br /><br />
+        <asp:Label ID="School_Information_Label" runat="server" Font-Size="Large" 
+                Text="School Information:"></asp:Label><br />
+             <br />School Nurse<br />
+		<asp:TextBox ID="UserSN" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')"  Width="113px"></asp:TextBox><br />
+		     <br />School<br />
+		<asp:TextBox ID="UserS" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" ></asp:TextBox><br />
+		     <br />Address<br />
+		<asp:TextBox ID="UserAS" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" ></asp:TextBox><br />
+		    <br />PHONE NUMBER<br />
+		<asp:TextBox ID="UserSP" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" ></asp:TextBox><br />
+            Need Medication?
+            <asp:DropDownList ID="UsermedCheck" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" >
+            <asp:ListItem Value="True" Text="No"></asp:ListItem>
+            <asp:ListItem Value="False" Text="Yes"></asp:ListItem>
+            </asp:DropDownList>&nbsp;&nbsp;&nbsp;&nbsp;
+		    <br />Medication<br />
+		<asp:TextBox ID="Usermed" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')"  Height="212px" 
+                Width="382px" TextMode="MultiLine"></asp:TextBox><br /><br />
+		    Is it needed during school hours?
+		    <asp:DropDownList ID="Usernas" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" >
+            <asp:ListItem Value="True" Text="No"></asp:ListItem>
+            <asp:ListItem Value="False" Text="Yes"></asp:ListItem>
+            </asp:DropDownList>&nbsp;&nbsp;&nbsp;&nbsp;
+		    <br />Dosage and route of administration:<br />
+		<asp:TextBox ID="Userdosage" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" ></asp:TextBox>
+            <br />
+            <br />Possiable side effects:<br />
+		<asp:TextBox ID="Userside" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" ></asp:TextBox>
+            <br />
+            <br />
+            Need another appointment
+            <asp:DropDownList ID="UserNAA" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')" >
+            <asp:ListItem Value="True" Text="No"></asp:ListItem>
+            <asp:ListItem Value="False" Text="Yes"></asp:ListItem>
+            </asp:DropDownList>&nbsp;&nbsp;&nbsp;&nbsp;
+		    <br />
+		    <br />
+            Memo<br />
+		<asp:TextBox ID="Memo" runat="server" CssClass="inputStyle" onfocus="changeColour(this, '#414141')"  Height="212px" 
+                Width="382px" TextMode="MultiLine"></asp:TextBox><br /><br />
+		    
+
+
+	<asp:Button ID="Button1" runat="server" Text="Update" onclick="Update"/><asp:Button ID="Button2" runat="server" Text="Delete" onclick="Delete"/><input type="button" value="close" onclick="history.go(-1);" /></div>
+</asp:Content>

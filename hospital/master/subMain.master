@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="subMain.master.cs" Inherits="master_main" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+	<title>TCH</title>
+	<link type="text/css" href="~/css/style.css" rel="Stylesheet" runat="server"/>
+	<script type="text/javascript" src="/hospital/script/jquery.js"></script>
+	<script type="text/javascript" src="/hospital/script/scrolltopcontrol.js"></script>
+	<script type="text/javascript">
+		function changeColour(obj, colour) {
+
+			var textboxes = document.getElementsByTagName("TEXTAREA");
+			for (var i = 0; i < textboxes.length; i++) {
+				textboxes[i].style.backgroundColor = "#FFF";
+			}
+			var inputs = document.getElementsByTagName("INPUT");
+			for (var i = 0; i < inputs.length; i++) {
+				inputs[i].style.backgroundColor = "#FFF";
+			}
+			var selects = document.getElementsByTagName("SELECT");
+			for (var i = 0; i < selects.length; i++) {
+				selects[i].style.backgroundColor = "#FFF";
+			}
+			obj.style.backgroundColor = colour;
+		}
+	</script>
+	<!-- start head holder -->
+	<asp:ContentPlaceHolder id="head" runat="server">
+	</asp:ContentPlaceHolder>
+	<!-- end head holder -->
+</head>
+<body>
+<form id="mainForm" runat="server">
+
+	<div id="wrapper">
+	<table cellpadding="0" cellspacing="0" style="width:920px;">
+		<tr>
+			<td colspan="2" style="width:920px;">
+				<div id="header">
+				<br />
+				<a href="/hospital/default.aspx"><asp:Image ID="Home" ImageUrl="~/images/logo.png" runat="server" alt="" width="76" height="69" /></a>
+   				</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:220px;vertical-align:top">
+				<div style="border-top:2px solid #222222;" >
+					<br />
+					<div class="break"></div>
+					<%if (DataTier.UserInfo.IsAdmin(Session))
+					{ %>
+					<div class="navigation"><a title="UserInfo" href ="/hospital/aspx/admin/user/list.aspx">User Info</a></div>
+					<div class="navigation"><a title="Registration" href ="/hospital/aspx/admin/user/registration.aspx">Admin Registration</a></div>
+					<div class="navigation"><a title="Room" href ="/hospital/aspx/admin/room/Dep_list.aspx">Room</a></div>
+					<%} %>
+					
+					<%if (DataTier.UserInfo.isDoctor(Session))
+					{ %>
+					<div class="navigation"><a title="DoctorPatient" href ="/hospital/aspx/doctor/patients/list.aspx">Doctor's Patient</a></div>
+					<%} %>
+					<%else if (DataTier.UserInfo.isNurse(Session))
+					{ %>
+					<div class="navigation"><a title="NursePatient" href ="/hospital/aspx/nurse/patients/list.aspx">Nurse's Patient</a></div>
+					<%} %>
+					<%else if (DataTier.UserInfo.isPharmacist(Session))
+					{ %>
+					<div class="navigation"><a title="Pharmarcist" href ="/hospital/aspx/Pharmacist/patients/list.aspx">Pharmarcist</a></div>
+					<%} %>
+					<%else if (DataTier.UserInfo.isMriOperator(Session))
+					{ %>
+					<div class="navigation"><a title="MRI" href ="/hospital/aspx/MRI/patients/list.aspx">MRI</a></div>
+					<%} %>
+					<%else if (DataTier.UserInfo.isXrayOperator(Session))
+					{ %>
+					<div class="navigation"><a title="Xray" href ="/hospital/aspx/xray/patients/list.aspx">Xray</a></div>
+					<%} %>
+					<%else if (DataTier.UserInfo.isReceptionist(Session))
+					{ %>
+					<div class="navigation"><a title="BookList" href ="/hospital/aspx/receptionist/book/list.aspx">Book List</a></div>
+					<div class="navigation"><a title="UserReg" href ="/hospital/aspx/receptionist/user/registration.aspx">User's Registration</a></div>
+					<div class="navigation"><a title="UserReg" href ="/hospital/aspx/receptionist/payment/list.aspx">Payment Report</a></div>
+					<%} %>
+					<%else if (DataTier.UserInfo.isCheif(Session))
+						{ %>
+					<div class="navigation"><a title="PatientRoom" href ="/hospital/aspx/nurse/patientroom/list.aspx">Patient Room</a></div>
+					<%	} %>
+					<%else if (DataTier.UserInfo.IsSysAdmin(Session))
+						{ %>
+					<div class="navigation"><a title="General" href ="/hospital/aspx/payment/general/list.aspx">General Payment</a></div>
+					<div class="navigation"><a title="Insurance" href ="/hospital/aspx/payment/insurance/list.aspx">Insurance</a></div>
+					<div class="navigation"><a title="itemReport" href ="/hospital/aspx/sys/itemReport/list.aspx">itemReport</a></div>
+					<div class="navigation"><a title="patientAndService" href ="/hospital/aspx/sys/patientAndService/list.aspx">patient and service Report</a></div>
+					<div class="navigation"><a title="patientPaymentReport" href ="/hospital/aspx/sys/patientPaymentReport/list.aspx">Patient payment Report</a></div>
+					<div class="navigation"><a title="patientReport" href ="/hospital/aspx/sys/patientReport/list.aspx">Patient Report</a></div>
+					<div class="navigation"><a title="paymentReport" href ="/hospital/aspx/sys/paymentReport/list.aspx">Payment Report</a></div>
+					<%	} %>
+					<div class="navigation"><asp:Button ID="logOut" runat="server" Text="LOGOUT" OnClick="onLogout"/></div>
+				</div>
+			</td>
+			<td style="width:700px;overflow:inherit;">
+				<div class="generic sevenhun end" style="width:700px">
+
+						<!-- start content holder -->
+						<asp:ContentPlaceHolder id="cnt" runat="server">
+						</asp:ContentPlaceHolder>
+						<!-- end content holder -->
+			
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-top:2px solid #222222;">
+
+					<p id="footer-nav">© 2010 Townsville Children's Hospital</p>
+
+			</td>
+		</tr>
+	</table>
+	</div>
+		
+</form>
+</body>
+</html>
